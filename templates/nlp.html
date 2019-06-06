@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>文本检测</title>
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/jiaodui.css">
+    <link rel="stylesheet" href="css/jquery.contextMenu.css">
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript"  src="js/bootstrap.js"></script>
+    <script type="text/javascript"  src="js/jquery.contextMenu.js"></script>
+    <script type="text/javascript"  src="js/csc.js"></script>
+
+
+  <style>
+  </style>
+
+  <script>
+    window.onload = function() {
+    }
+  </script>
+</head>
+<body >
+{% from "_formhelpers.html" import render_field %}
+
+     <div >
+       <h2>输入英文，点击翻译按钮进行翻译。</h2>
+</div>
+    <div style="overflow-y: auto; border: 1px; border-style: solid; width: 80%; height:200px; margin-left: 10%;">
+        <div contenteditable="true" id="text-for-check" style="white-space: pre-wrap;-o-tab-size: 4; -moz-tab-size: 4; tab-size: 4;">
+        {{ render_field(form.review) }}
+        </div>
+    </div>
+    
+    
+ <div >
+       <h2>翻译结果</h2>
+</div>
+    <div style="overflow-y: auto; border: 1px; border-style: solid; width: 80%; height:200px; margin-left: 10%;">
+        <div contenteditable="true" id="text-for-result" style="white-space: pre-wrap;-o-tab-size: 4; -moz-tab-size: 4; tab-size: 4;">
+        {{ label }}
+        </div>
+    </div>   
+
+<div>
+  <div>
+
+        <form method="post" action="/main" class="div-left">
+
+        <input id="btn-check" class="btn btn-success btn-lg btn-block" style="vertical-align: top; max-width: 120px; margin-left: 83%; max-height: 70px;" type="submit" value="翻译" name="submit_btn">
+        </form>
+        <!--<span class="btn-lg">-->
+        <!--<button id="btn-check" class="btn btn-success btn-lg btn-block" style="vertical-align: top; max-width: 120px; margin-left: 83%; max-height: 70px;" onclick="/main" ;>-->
+            <!--<span style="font-size:xx-large"> 翻译 </span>-->
+        <!--</button>-->
+    <!--</span> -->
+  </div>
+
+   </div>
+
+
+</body>
+</html>

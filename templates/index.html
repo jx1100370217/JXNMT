@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>双猴科技英译中实验平台</title>
+</head>
+<style>
+    .div-left {
+        width: 400px;
+        height: 120px;
+        margin-left: 10px;
+        text-align: left;
+        margin-top: 50px;
+    }
+
+    .btn {
+        width: 80px;
+        font-size: 20px;
+        cursor: pointer;
+        background-color: #03C;
+        border-color: #03C;
+        color: white;
+        margin-left: 90%;
+        border-radius: 6px;
+    }
+    .btn:hover {
+        background-color: green;
+        border-color: green;
+    }
+
+    .border {
+        border: 1px solid #000;
+    }
+
+    h2, .h2 {
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    textarea {
+        overflow-y: auto;
+        border: 1px;
+        border-style: solid;
+        width: 98%;
+        height: 200px;
+        font-size: 20px;
+        resize: none;
+    }
+
+</style>
+<body>
+{% from "_formhelpers.html" import render_field %}
+<div class="content_div">
+    <div>
+        <h1>双猴科技英译中实验平台</h1>
+        <h2>输入英文，点击翻译按钮进行翻译。</h2>
+    </div>
+    <div style="overflow-y: auto; width: 84%; height:280px; margin-left: 7%;">
+        <form style="overflow-y: auto;  width: 100%; height:280px;"
+              method="post" action="/main">
+            <dl>
+                {{ render_field(form.review) }}
+            </dl>
+            <input class="btn" type="submit" value="翻 译" name="submit_btn">
+        </form>
+    </div>
+    <div>
+        <h2>中文翻译结果</h2>
+    </div>
+    <div style="overflow-y: auto; border: 1px; border-style: solid; width: 80%; height:200px; margin-left: 10%; font-size: 20px">
+        <strong>{{ label }}</strong>
+    </div>
+</div>
+</body>
+</html>

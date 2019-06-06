@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+	<style type="text/css">
+	.div-left { 
+		width:400px;
+		height:120px;
+		float:left;
+		border:1px solid #000;
+		margin:30px;
+		text-align:left;
+	} 
+	.div-right { 
+		width:400px;
+		height:120px;
+		float:left;
+		border:1px solid #000;
+		margin-left:30px;
+		text-align:left;
+		
+	} 
+	.btn {
+		margin-top:70px;
+		float:left;
+		height:50px;
+		width:100px;
+		font-size:30px;
+	}
+	* {
+		margin:0;
+		padding:0;
+		font-size:20px;
+	}
+	</style>
+	
+  <title>英译中</title>
+	    {% from "_formhelpers.html" import render_field %}
+	<div id="container_div" >
+		<div id="english">
+			<textarea  rows="" cols="" class="div-left">
+				{{ render_field(form.review) }}
+			</textarea>
+		</div>
+		<div id="button" float='left'>
+			<!-- <button class='btn'>
+			       翻译
+			</button> -->
+	        <form method="post" action="/main">
+	            <input class='btn' type="submit" value="翻译" name="submit_btn">
+	        </form>
+		</div>
+		<div id="chinese">
+			<textarea  rows="" cols="" class="div-left">
+			</textarea>
+		</div>
+	</div>
+  
+</head>
+<body>
+  
+</body>
+</html>
