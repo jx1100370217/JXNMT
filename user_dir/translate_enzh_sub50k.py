@@ -60,11 +60,11 @@ class TranslateEnzhSub50k(translate.TranslateProblem):
  
     @property
     def source_vocab_name(self):
-        return "vocab.en.%d" % self.approx_vocab_size
+        return "vocab.zh.%d" % self.approx_vocab_size
  
     @property
     def target_vocab_name(self):
-        return "vocab.zh.%d" % self.approx_vocab_size
+        return "vocab.en.%d" % self.approx_vocab_size
  
     def get_training_dataset(self, tmp_dir):
         full_dataset = _NC_TRAIN_DATASETS
